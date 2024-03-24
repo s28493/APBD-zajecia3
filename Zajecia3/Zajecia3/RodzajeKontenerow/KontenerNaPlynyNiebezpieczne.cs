@@ -25,7 +25,7 @@ public class KontenerNaPlynyNiebiezpieczne : Kontener, IHazardNotifier
         }
         else
         {
-            KontenerInfo();
+            Powiadomienie();
             throw new OverfillException();
         }
     }
@@ -35,7 +35,7 @@ public class KontenerNaPlynyNiebiezpieczne : Kontener, IHazardNotifier
         NumerSeryjny = $"KON-LN-{LicznikSeryjny}";
     }
 
-    public void KontenerInfo()
+    public void Powiadomienie()
     {
         Console.WriteLine("Niebezpieczna operacja za dużo towaru w kontenerze: " + NumerSeryjny);
     }

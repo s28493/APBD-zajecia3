@@ -12,7 +12,7 @@ public abstract class Kontener
     protected float MaxLadownoscKontenera { get; set; }
     protected Kontener()
     {
-        LicznikSeryjny = ++LicznikSeryjny;
+        LicznikSeryjny++;
         WagaLadunkuKG = 0;
         WysokoscCM = 1500;
         WagaWlasnaKG = 300;
