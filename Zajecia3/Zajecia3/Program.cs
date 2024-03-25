@@ -26,4 +26,11 @@ kontenerowiec2.ZaladujKontenerNaStatek(kontenerNaGaz);
 kontenerowiec2.ZastapKontenerInnymNaStatku(0,kontenerChlodniczy);
 kontenerowiec2.UsunKontenerZeStatku(kontenerNaGaz);
 
+kontenerowiec2.ZaladujKontenerNaStatek(kontenerNaGaz);
+
+Console.WriteLine("------------------");
+kontenerowiec2.PrzeniesKontenerNaInnyStatek(1, kontenerowiec1);
+
+kontenerowiec1.InformacjeOStatku();
+kontenerowiec2.InformacjeOStatku();
 

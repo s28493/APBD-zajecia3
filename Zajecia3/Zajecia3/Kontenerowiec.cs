@@ -7,6 +7,7 @@ public class Kontenerowiec
     public int MaxLiczbaKontenerow;
     public float MaxWagaKontenerow;
     public float ObecnaWagaKontenerow = 0;
+    public static int licznikID = 0;
     public int IDStatku = 0;
 
     public Kontenerowiec(int maxWezlow, int maxLiczbaKontenerow, float maxWagaKontenerow)
@@ -14,7 +15,7 @@ public class Kontenerowiec
         MaxWezlow = maxWezlow;
         MaxLiczbaKontenerow = maxLiczbaKontenerow;
         MaxWagaKontenerow = maxWagaKontenerow;
-        IDStatku++;
+        IDStatku = licznikID++;
     }
 
     public void ZaladujKontenerNaStatek(Kontener kontener)
@@ -62,7 +63,7 @@ public class Kontenerowiec
 
     public void ZastapKontenerInnymNaStatku(int numerKontenera, Kontener kontener)
     {
-        if (numerKontenera >= 0 && numerKontenera <= KonteneryNaStatku.Count)
+        if (numerKontenera >= 0 && numerKontenera < KonteneryNaStatku.Count)
         {
             Kontener kontenerLokalny = KonteneryNaStatku[numerKontenera];
             KonteneryNaStatku.Remove(kontenerLokalny);
@@ -76,10 +77,37 @@ public class Kontenerowiec
             Console.WriteLine("Nie ma kontenera o podanym numerze");
         }
     }
+
+    public void PrzeniesKontenerNaInnyStatek(int numerKontenera, Kontenerowiec kontenerowiec)
+    {
+        if (numerKontenera >= 0 && numerKontenera < KonteneryNaStatku.Count)
+        {
+            Kontener kontenerLokalny = KonteneryNaStatku[numerKontenera];
+            UsunKontenerZeStatku(kontenerLokalny);
+            kontenerowiec.ZaladujKontenerNaStatek(kontenerLokalny);
+            Console.WriteLine("Przenoszenie zostało zakończone");
+        }
+    }
+
+    private void wypiszKontenery()
+    {
+        foreach (Kontener kontener in KonteneryNaStatku)
+        {
+            Console.WriteLine(kontener);
+        }
+    }
     
-    
-    // Możliwość przeniesienie kontenera między dwoma statkami
-    // Wypisanie informacji o danym statku i jego ładunku
+    public void InformacjeOStatku()
+    {
+        Console.WriteLine("ID Statku: " + IDStatku 
+        + "\n Maksymalna ilość węzłów: " + MaxWezlow
+        + "\n Maksymlana liczba kontenerow: " + MaxLiczbaKontenerow
+        + "\n Obecna waga kontenerow: " + ObecnaWagaKontenerow
+        + "\n Maksymalna waga konterenow: " + MaxWagaKontenerow
+        + "\n Kontenery na statku: ");
+        wypiszKontenery();
+    }
+
     
     
     
