@@ -39,4 +39,9 @@ public class KontenerNaPlynyNiebiezpieczne : Kontener, IHazardNotifier
     {
         Console.WriteLine("Niebezpieczna operacja za dużo towaru w kontenerze: " + NumerSeryjny);
     }
+    
+    public override string ToString()
+    {
+        return "Kontener na płyny niebezpieczne: " + base.ToString();
+    }
 }

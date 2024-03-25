@@ -44,4 +44,8 @@ public class KontenerNaGaz : Kontener, IHazardNotifier
     {
         Console.WriteLine("Niebezpieczna operacja za dużo towaru w kontenerze: " + NumerSeryjny);
     }
+    public override string ToString()
+    {
+        return "Kontener na gaz: ciśnienie = " + cisnienie + ", " + base.ToString();
+    }
 }

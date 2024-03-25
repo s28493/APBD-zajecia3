@@ -4,6 +4,7 @@ using Zajecia3;
 using Zajecia3.RodzajeKontenerow;
 
 Kontenerowiec kontenerowiec1 = new Kontenerowiec(25, 50,500000);
+Kontenerowiec kontenerowiec2 = new Kontenerowiec(10, 3, 50000);
 KontenerChlodniczy kontenerChlodniczy = new KontenerChlodniczy("Fish",0);
 KontenerNaGaz kontenerNaGaz = new KontenerNaGaz();
 KontenerNaPlynyZwykle kontenerNaPlynyZwykle = new KontenerNaPlynyZwykle();
@@ -16,3 +17,13 @@ kontenerNaPlynyNiebiezpieczne.OproznijLadunek();
 
 kontenerNaGaz.ZaladujLadunek(400);
 kontenerNaGaz.OproznijLadunek();
+
+Console.WriteLine(kontenerNaPlynyZwykle);
+Console.WriteLine(kontenerNaGaz);
+Console.WriteLine(kontenerChlodniczy);
+
+kontenerowiec2.ZaladujKontenerNaStatek(kontenerNaGaz);
+kontenerowiec2.ZastapKontenerInnymNaStatku(0,kontenerChlodniczy);
+kontenerowiec2.UsunKontenerZeStatku(kontenerNaGaz);
+
+

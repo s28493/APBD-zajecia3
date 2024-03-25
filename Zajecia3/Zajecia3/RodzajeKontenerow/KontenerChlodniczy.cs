@@ -67,4 +67,9 @@ public class KontenerChlodniczy : Kontener, IHazardNotifier
     {
         Console.WriteLine("Niebezpieczna operacja za dużo towaru w kontenerze: " + NumerSeryjny);
     }
+    
+    public override string ToString()
+    {
+        return "Kontener chłodniczy: Produkt = " + Produkt + ", Temperatura = " + Temperatura + ", " + base.ToString();
+    }
 }

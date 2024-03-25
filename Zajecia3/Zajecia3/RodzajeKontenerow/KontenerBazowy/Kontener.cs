@@ -22,4 +22,16 @@ public abstract class Kontener
     public abstract void OproznijLadunek();
     public abstract void ZaladujLadunek(float ladunekDoZaladowania);
     public abstract void SetNumerSeryjny();
+
+    public override string ToString()
+    {
+        return "Numer seryjny: " + NumerSeryjny + ", Aktualna Waga Ładunku: " + WagaLadunkuKG +
+               " , Maksymalna Waga Ładunku: " + MaxLadownoscKontenera;
+    }
+
+    public float getWagaKontenera()
+    {
+        return WagaWlasnaKG + WagaLadunkuKG;
+    }
+    
 }
