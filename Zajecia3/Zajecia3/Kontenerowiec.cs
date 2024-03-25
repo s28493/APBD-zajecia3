@@ -2,7 +2,7 @@
 
 public class Kontenerowiec
 {
-    public List<Kontener> KonteneryNaStatku = new List<Kontener>();
+    public IList<Kontener> KonteneryNaStatku = new List<Kontener>();
     public int MaxWezlow;
     public int MaxLiczbaKontenerow;
     public float MaxWagaKontenerow;

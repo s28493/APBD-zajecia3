@@ -10,25 +10,38 @@ KontenerNaGaz kontenerNaGaz = new KontenerNaGaz();
 KontenerNaPlynyZwykle kontenerNaPlynyZwykle = new KontenerNaPlynyZwykle();
 KontenerNaPlynyNiebiezpieczne kontenerNaPlynyNiebiezpieczne = new KontenerNaPlynyNiebiezpieczne();
 
+Console.WriteLine("ŁADOWNIAE/ROZŁADOWWANIE ŁADUNKU");
+Console.WriteLine("CHŁODNICZY: ");
 kontenerChlodniczy.ZaladujLadunek(1000);
 
+Console.WriteLine("\nPŁYNY NIEBEZPIECZNE: ");
 kontenerNaPlynyNiebiezpieczne.ZaladujLadunek(4999);
 kontenerNaPlynyNiebiezpieczne.OproznijLadunek();
 
+Console.WriteLine("\nGAZ: ");
 kontenerNaGaz.ZaladujLadunek(400);
 kontenerNaGaz.OproznijLadunek();
 
+Console.WriteLine("\nInformacje o pojedynczych kontenerach: ");
 Console.WriteLine(kontenerNaPlynyZwykle);
 Console.WriteLine(kontenerNaGaz);
 Console.WriteLine(kontenerChlodniczy);
 
+Console.WriteLine("\nZaładuj kontener na statek: ");
 kontenerowiec2.ZaladujKontenerNaStatek(kontenerNaGaz);
+
+Console.WriteLine("\nZastap kontener innym na statku: ");
 kontenerowiec2.ZastapKontenerInnymNaStatku(0,kontenerChlodniczy);
-kontenerowiec2.UsunKontenerZeStatku(kontenerNaGaz);
 
-kontenerowiec2.ZaladujKontenerNaStatek(kontenerNaGaz);
+Console.WriteLine("\nUsun kontener ze statku: ");
+kontenerowiec2.UsunKontenerZeStatku(kontenerChlodniczy);
 
-Console.WriteLine("------------------");
+KontenerNaGaz k1 = new KontenerNaGaz();
+
+
+//kontenerowiec2.ZaladujKontenerNaStatek(kontenerNaGaz);
+
+Console.WriteLine("\nPrzenies kontener na inny statek:  ");
 kontenerowiec2.PrzeniesKontenerNaInnyStatek(1, kontenerowiec1);
 
 kontenerowiec1.InformacjeOStatku();

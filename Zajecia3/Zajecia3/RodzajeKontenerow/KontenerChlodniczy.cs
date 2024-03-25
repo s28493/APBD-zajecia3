@@ -6,7 +6,7 @@ public class KontenerChlodniczy : Kontener, IHazardNotifier
 {
     protected String Produkt;
     protected float Temperatura;
-    protected Dictionary<String, float> TemperaturyProduktow = new Dictionary<string, float>
+    protected IDictionary<string, float> TemperaturyProduktow = new Dictionary<string, float>
     {
         {"Bananas", (float)13.3},
         {"Chocolate", 18},
